@@ -26,9 +26,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                Bundle b = new Bundle();
-                b.putString(KEY_NAME, nameEditText.getText().toString());
-                intent.putExtras(b);
+                intent.putExtra(KEY_NAME, nameEditText.getText().toString());
                 startActivity(intent);
             }
         });
