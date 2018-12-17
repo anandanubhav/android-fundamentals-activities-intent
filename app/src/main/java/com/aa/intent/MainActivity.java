@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import static com.aa.intent.Constants.KEY_NAME;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button submitButton;
@@ -24,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                Bundle b = new Bundle();
+                b.putString(KEY_NAME, nameEditText.getText().toString());
+                intent.putExtras(b);
                 startActivity(intent);
             }
         });
